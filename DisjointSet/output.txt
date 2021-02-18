@@ -1,0 +1,23 @@
+type number of nodes => 5
+type number of edges => 3
+
+{ 0 } #edge => 0
+{ 1 } #edge => 0
+{ 2 } #edge => 0
+{ 3 } #edge => 0
+{ 4 } #edge => 0
+
+put node number between 0 to 4
+1 : put edge ( a b ) => 0 1
+    add edge ( 0 1 )
+
+2 : put edge ( a b ) => 0 2
+    add edge ( 0 2 )
+
+3 : put edge ( a b ) => 3 4
+    add edge ( 3 4 )
+
+
+
+{ 0 1 2 } #edge => 2
+{ 3 4 } #edge => 1
