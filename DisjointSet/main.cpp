@@ -11,8 +11,8 @@ void print_set(DisjointSet<Node>&);
 // CLRS 21.1 Disjoint Set
 // CLRS 21.3 Disjoint Set Forest
 int main() {
-  vector<int> col{};
-  vector<vector<int>> T{};
+  vector<int> edge{};
+  vector<vector<int>> edges{};
   string s1, s2;
 
 //====================================================
@@ -72,27 +72,29 @@ put_edge:
     cout << i << " : put edge ( a b ) => ";
     cin >> ws;
     getline(cin, s2);
-    stringstream ss{s2};    
+    stringstream ss{s2};
+
+  //====================================================
+  //  get 2 edges from user
     while(ss >> s1 >> skipws)
     {
       int input = stoi(s1);
-
       if(input > myset.get_size()) 
       {
-        cout << "put node number between 0 to " << myset.get_size() << '\n';
+        cout << "put node number between 0 to " << myset.get_size()-1 << '\n';
         goto put_edge;
       }
       
-     col.emplace_back(input);
+     edge.emplace_back(input);
     }
       
     cout << "    add edge ( "  ;
-    for(auto r : col) cout << r << ' ';
+    for(auto r : edge) cout << r << ' ';
     cout << ")\n";
 
-    T.emplace_back(col);
-    myset.merge_set(T[i-1][0], T[i-1][1]);
-    col.clear();
+    edges.emplace_back(edge);
+    myset.merge_set(edges[i-1][0], edges[i-1][1]);
+    edge.clear();
     cout << '\n';
   }
   
