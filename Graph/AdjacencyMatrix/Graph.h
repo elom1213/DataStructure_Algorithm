@@ -16,5 +16,5 @@ typedef struct _GraphType
 } GraphType;
 
 void init(GraphType*);
-void set_total_node_num(GraphType*, int);
-void set_edge(GraphType*, int, int);
+void set_total_node_num(GraphType*, int nodenum);
+void set_edge(GraphType*, int src, int dist);

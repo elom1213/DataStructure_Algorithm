@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <sys/types.h>
 #include <time.h>
 #include <stdlib.h>
 #include "heap.h"
@@ -33,7 +32,7 @@ int main(void) {
   print_heap(myheap);
 
   // sort array
-  heap_sort(myheap, arr);
+  heap_sort(myheap, arr, ARRAY_SIZE);
   putchar('\n');
   for(int i=0; i<ARRAY_SIZE; i++) printf("%d\t", arr[i]);
 
@@ -42,6 +41,6 @@ int main(void) {
 
 void put_random_num(int* _arr)
 {
-  srand((size_t)time(NULL));
+  srand((long long)time(NULL));
   for(int i=0; i < ARRAY_SIZE ; _arr[i++] = rand()%100);
 }

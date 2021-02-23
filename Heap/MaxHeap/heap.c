@@ -3,12 +3,19 @@
 #include <string.h>
 #include "heap.h"
 
+#define SENTINEL        0x7fffffff
+
+#define PARENT(i)       (i/2)
+#define LEFT(i)         (i*2)
+#define RIGHT(i)        ((i*2)+1)
+#define SWAP(x, y)      {x ^= y ^= x ^= y;}
+
+
 // print
 void print_heap(heap* _h)
 {
   int i = 0b01;
   int s = 0b10;
-  //===============================================prob
   int n = _h->size;
   for(; i <= n ; s<<=1, putchar('\n')) 
     for(; i < s; printf("\t%d", _h->heap[i++]));
@@ -28,9 +35,9 @@ void init_heap(heap* _h)
 }
 
 // build
-void build_max_heap(heap* _h, int _arr[], const int arr_siz)
+void build_max_heap(heap* _h, int _arr[], const int siz)
 {
-  for(int i = 0; i < arr_siz ; i++)
+  for(int i = 0; i < siz ; i++)
     max_heap_increase(_h, _arr[i]);
 };
 
@@ -51,10 +58,9 @@ void heap_insert_key(heap* _h, int _idx, int _key)
 };
 
 // sorting
-void heap_sort(heap* _h, int _arr[])
+void heap_sort(heap* _h, int _arr[], const int siz)
 {
-  //===============================================prob
-  for(int max, i=1; i <= _h->size; i++)
+  for(int max, i=1; i <= siz; i++)
   {
     max = heap_extract_max(_h);
     _arr[i-1] = max;
@@ -72,11 +78,14 @@ int heap_extract_max(heap* _h)
   SWAP(_h->heap[1], _h->heap[_h->size]);
   _h->size--;
   max_heapify(_h, 1);
+
+  printf("\nheap siz => %d", _h->size);
   return max;
 }
 
 void max_heapify(heap* _h, int idx)
 {
+  if(RIGHT(idx) > _h->size) return ;
   int largest_child_idx = idx;
   if(_h->heap[idx] < _h->heap[LEFT(idx)])
     largest_child_idx = LEFT(idx);

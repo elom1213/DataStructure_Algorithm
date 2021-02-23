@@ -13,21 +13,11 @@ void init(GraphType *graph)
 
 void set_total_node_num(GraphType* graph, int nodenum)
 {
-  if(MAXSIZ < nodenum)
-  {
-    fprintf(stderr, "invalid max size\n");
-    exit(1);
-  }
   graph->total_node_num = nodenum;
 }
 
-void set_edge(GraphType* graph, int _s, int _v)
+void set_edge(GraphType* graph, int src, int dist)
 {
-  if(_s > graph->total_node_num || _v > graph->total_node_num)
-  {
-    fprintf(stderr, "invalid input node\n");
-    exit(1);
-  }
-  graph->adj_mat[_s][_v] = graph->adj_mat[_v][_s] = 1;
+  graph->adj_mat[src][dist] = graph->adj_mat[dist][src] = 1;
 }
 
