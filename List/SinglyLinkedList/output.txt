@@ -1,0 +1,11 @@
+
+Initial linked list
+      15       6       1      10
+Finding 6 is successful
+Finding 3 is unsuccessful
+Inserting 8 after 6
+      15       6       8       1      10
+Delete next 1
+      15       6       8       1
+Delete node 3
+Deleting 3 is Unsuccessful!!

@@ -1,0 +1,78 @@
+
+ NAME CARD MANAGER
+
+ ------------------
+1. Input Namecard
+2. Delete Namecard
+3. Search Namecard
+4. Load Namecard
+5. Save Namecard
+6. List Namecard
+7. Print Name
+8. End Namecard
+
+ : Select operation -> 4
+
+Select 4
+load 2 data
+
+ : Select operation -> 6
+
+Select 6
+Name                   Corporation                      Telephone Number
+---------------------  -------------------------------  ----------------------
+Elon_Musk              SpaceX                           123-123-111
+Lisa_Su                AMD                              123-123-222
+
+ 
+
+ : Select operation -> 1
+
+Select 1
+Input namecard menu :
+Input name -> Jensen_Huang
+
+Input corporation -> NVIDIA
+
+Input telephone num -> 123-123-333
+
+
+ : Select operation -> 6
+
+Select 6
+Name                   Corporation                      Telephone Number
+---------------------  -------------------------------  ----------------------
+Jensen_Huang           NVIDIA                           123-123-333
+Elon_Musk              SpaceX                           123-123-111
+Lisa_Su                AMD                              123-123-222
+
+ 
+
+ : Select operation -> 2
+
+Select 2
+  Input name to delete -> Elon_Musk
+
+  File 'Elon_Musk' deleted
+
+
+ : Select operation -> 6
+
+Select 6
+Name                   Corporation                      Telephone Number
+---------------------  -------------------------------  ----------------------
+Jensen_Huang           NVIDIA                           123-123-333
+Lisa_Su                AMD                              123-123-222
+
+ 
+ : Select operation -> 5
+
+Select 5 Save data
+
+ 
+
+ : Select operation -> 8
+
+Select 8
+
+Program ends...

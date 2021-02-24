@@ -80,12 +80,13 @@ int heap_extract_max(heap* _h)
   max_heapify(_h, 1);
 
   printf("\nheap siz => %d", _h->size);
+
   return max;
 }
 
 void max_heapify(heap* _h, int idx)
 {
-  if(RIGHT(idx) > _h->size) return ;
+  if(RIGHT(idx) > _h->size) return;
   int largest_child_idx = idx;
   if(_h->heap[idx] < _h->heap[LEFT(idx)])
     largest_child_idx = LEFT(idx);

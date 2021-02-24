@@ -1,0 +1,8 @@
+
+    3    4    8   16   40
+Insert 35 before 4
+    3   35    4    8   16   40
+Delete node 4
+    3   35    8   16   40
+Insert 11 before 40
+    3   35    8   16   11   40
