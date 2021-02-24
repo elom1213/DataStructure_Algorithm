@@ -1,0 +1,27 @@
+./main.exe "((6+1)+2)/3"
+
+get input => ((6+1)+2)/3,
+ Post fix : 6 1 + 2 + 3 /
+
+Pop : Num
+Current value is : 6
+
+Pop : Num
+Current value is : 1
+
+Pop : +
+Current value is : 7
+
+Pop : Num
+Current value is : 2
+
+Pop : +
+Current value is : 9
+
+Pop : Num
+Current value is : 3
+
+Pop : /
+Current value is : 3
+
+Answer : 3
