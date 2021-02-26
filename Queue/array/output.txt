@@ -1,0 +1,20 @@
+
+Push  3  10  32  4  80  12
+ Queue contents : Front ---> Rear
+3    10   32   4    80   12   
+Pop
+ Queue contents : Front ---> Rear
+10   32   4    80   12   
+Poped value is : 3
+Push 3 2 5 7
+ Queue contents : Front ---> Rear
+10   32   4    80   12   3    2    5    7    
+Try push
+ Error : queue overflow ...
+ Queue contents : Front ---> Rear
+10   32   4    80   12   3    2    5    7    
+Initialize queue
+ Queue contents : Front ---> Rear
+
+Try pop
+ Error : queue underflow ...

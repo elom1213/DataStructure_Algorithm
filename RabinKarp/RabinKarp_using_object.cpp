@@ -72,7 +72,7 @@ int main() {
   // T : text
 
   const char* P = {"abc"}; // size = m
-  const char* T = {"abcddabcdefufukabcloabaabcbieessabcc"}; // size = n
+  const char* T = {"dabcddabcdefufukabcloabaabcbieessabcc"}; // size = n
 
   int m = strlen(P);
   int n = strlen(T);
@@ -82,8 +82,9 @@ int main() {
   Matcher matcher;
   matcher.set_word_base(m);
 
-  // p = 97,098,099 % 103 = 102
-  p = matcher.word_to_int(T, m);
+  // p =  97,098,099 % 103 = 102
+  // t = 100,097,098 % 103 = 50
+  p = matcher.word_to_int(P, m);
   t = matcher.word_to_int(T, m);
 
   for(int s = 0; s < n-m ; ++s)
@@ -93,3 +94,11 @@ int main() {
     t = matcher.move_step(t, T[s], T[s+m]); // update t 
   }
 }
+
+/*
+  pattern matches at index 1
+  pattern matches at index 6
+  pattern matches at index 16
+  pattern matches at index 24
+  pattern matches at index 33
+*/

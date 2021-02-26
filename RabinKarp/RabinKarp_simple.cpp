@@ -11,7 +11,7 @@ int main() {
   // T : text
 
   const char* P = {"abc"}; // size : m
-  const char* T = {"abcddabcdefufukabcloabaabcbieessabcc"}; // size : n
+  const char* T = {"dabcddabcdefufukabcloabaabcbieessabcc"}; // size : n
 
   int m = strlen(P);
   int n = strlen(T);
@@ -38,3 +38,11 @@ int main() {
     if(t < 0) t+= q;
   }
 }
+
+/*
+  pattern matches at index 1
+  pattern matches at index 6
+  pattern matches at index 16
+  pattern matches at index 24
+  pattern matches at index 33
+*/

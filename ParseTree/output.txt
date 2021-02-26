@@ -1,0 +1,6 @@
+Input PostFixed -> : A B + C D - * E / F G * +
+
+Preorder traverse -> +  /  *  +  A  B  -  C  D  E  *  F  G
+Inorder traverse -> A  +  B  *  C  -  D  /  E  +  F  *  G
+Postorder traverse -> A  B  +  C  D  -  *  E  /  F  G  *  +
+Levelorder traverse ->+  /  *  *  E  F  G  +  -  A  B  C  D
