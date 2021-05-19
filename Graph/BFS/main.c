@@ -1,25 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "DFS.h"
+#include <string.h>
+#include "BFS.h"
 #define ON 1
 #define OFF 0
 #define TRUE 1
 #define FALSE 0
-#define START 0
-#define SIZE 5
+#define START 1
+#define SIZE 9 
 
 int visited[SIZE];
 
 /*
  * given a graph
  *
- * 			0
- *		      /   \
- *		     1    2
- *	   	     / \ / 
- *	   	    3   4
+ * 		  	 0
+ *		       /   \
+ *		      1    2
+ *		     / \   \
+ *	   	    3   4--5
+ *		    \  / \
+ *		      6  7--8
  *
- * operate DFS form START vertex
+ * operate BFS form START vertex
  * using adjiacent list and pointer array
  */
 
@@ -31,6 +34,7 @@ int main()
 	char opcode;
 	FILE *fp;
 
+	init_queue();
 	init(head, is_visited, SIZE);
 	SW = ON;
 	while(SW)
@@ -57,15 +61,15 @@ int main()
 				}
 			break;
 			case'T':
-				dfs(head, is_visited, START);
+				bfs(head, is_visited, START);
 				memset(is_visited, 0, SIZE*sizeof(int));	
 			break;
 			case'P':
 				print_all(head, SIZE);
 			break;
 			case'Q':
+				delete_queue();
 				delete_all(head, SIZE);
-				print_all(head, SIZE);
 				SW = OFF;
 			break;
 			default:
